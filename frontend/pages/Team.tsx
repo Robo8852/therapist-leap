@@ -1,25 +1,28 @@
 export default function Team() {
   const teamMembers = [
     {
-      name: 'Dr. Maria Santos',
+      name: 'Alfredo Saavedra Castillo',
       title: 'Clinical Director',
       credentials: 'MD, Psychiatry',
-      bio: 'Board-certified psychiatrist with 15+ years of experience in psychedelic-assisted therapy.',
-      languages: ['English', 'Spanish', 'Portuguese']
+      bio: 'Board-certified psychiatrist with extensive experience in psychedelic-assisted therapy and holistic mental health care.',
+      languages: ['English', 'Spanish'],
+      image: '/assets/images/2024/07/Alfredo-Saavedra-Castillo-profile.png'
     },
     {
-      name: 'Dr. James van der Berg',
-      title: 'Lead Therapist',
-      credentials: 'PhD, Clinical Psychology',
-      bio: 'Specialized in trauma therapy and integration practices with extensive training in psychedelic therapy.',
-      languages: ['English', 'Dutch']
+      name: 'Fabiola Silva',
+      title: 'Clinical Psychologist',
+      credentials: 'MA, Clinical Psychology',
+      bio: 'Specialized in psychedelic-assisted psychotherapy and trauma-informed care.',
+      languages: ['English', 'Spanish', 'Portuguese'],
+      image: '/assets/images/2024/07/Fabiola-Silva-profile2.png'
     },
     {
-      name: 'Sofia Rodriguez',
+      name: 'Adrianna Beasley',
       title: 'Integration Specialist',
       credentials: 'MA, Counseling Psychology',
-      bio: 'Focuses on post-experience integration and long-term therapeutic support.',
-      languages: ['Spanish', 'English']
+      bio: 'Focuses on post-experience integration and long-term therapeutic support with a holistic approach.',
+      languages: ['English', 'Spanish'],
+      image: '/assets/images/2024/09/adriana-profile-soul-synaptica.jpg'
     }
   ]
 
@@ -34,8 +37,16 @@ export default function Team() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {teamMembers.map((member, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="h-64 bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-400 text-6xl">👤</span>
+              <div className="h-64 bg-gray-200 flex items-center justify-center overflow-hidden">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="text-gray-400 text-6xl">👤</span>
+                )}
               </div>
               <div className="p-6">
                 <h3 className="text-2xl font-bold mb-1">{member.name}</h3>
